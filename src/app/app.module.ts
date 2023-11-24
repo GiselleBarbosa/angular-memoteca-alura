@@ -5,9 +5,9 @@ import { CreateNotesComponent } from './pages/create-notes/create-notes.componen
 import { FooterComponent } from './layout/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './layout/header/header.component';
-import { ListNotesComponent } from './pages/list-notes/list-notes.component';
+import { ListNotesComponent } from './pages/list-notes/list-notes/list-notes.component';
 import { NgModule } from '@angular/core';
-import { CardsComponent } from './shared/components/cards/cards.component';
+import { CardsComponent } from './pages/list-notes/cards/cards.component';
 
 @NgModule({
   declarations: [
