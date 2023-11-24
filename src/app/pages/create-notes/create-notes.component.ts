@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { pensamento } from 'src/app/shared/pensamento';
 
 @Component({
-  selector: 'app-notes-create',
-  templateUrl: './notes-create.component.html',
-  styleUrls: ['./notes-create.component.css'],
+  selector: 'app-create-notes',
+  templateUrl: './create-notes.component.html',
+  styleUrls: ['./create-notes.component.css'],
 })
-export class NotesCreateComponent implements OnInit {
+export class CreateNotesComponent implements OnInit {
   public pensamento = pensamento;
 
   constructor() {}
@@ -18,7 +18,4 @@ export class NotesCreateComponent implements OnInit {
     alert('Criado pensamento');
   }
 
-  cancelar() {
-    alert('Cancelou');
-  }
 }
