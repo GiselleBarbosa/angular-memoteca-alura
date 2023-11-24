@@ -4,10 +4,16 @@
     <button class="botao" routerLink="/create-notes">
       Adicionar pensamento
     </button>
-    <div class="mural">
+    <div class="mural" *ngIf="notesList.length > 0; else emptyNotes">
       <ng-container *ngFor="let note of notesList">
         <app-cards [note]="note"></app-cards>
       </ng-container>
     </div>
+
+    <ng-template #emptyNotes>
+      <div class="ff-inter sem-pensamentos">
+        <p>Ainda não há pensamentos cadastrados!</p>
+      </div>
+    </ng-template>
   </header>
 </section>
