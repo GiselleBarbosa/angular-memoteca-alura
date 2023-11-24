@@ -1,5 +1,5 @@
 //MOCK
-export const pensamento = {
+export const noteMock = {
   id: '1',
   conteudo: 'Revisão Angular',
   autoria: 'Giselle Barbosa',

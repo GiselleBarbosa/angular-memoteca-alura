@@ -4,5 +4,10 @@
     <button class="botao" routerLink="/create-notes">
       Adicionar pensamento
     </button>
+    <div class="mural">
+      <ng-container *ngFor="let note of listNotes">
+        <app-cards></app-cards>
+      </ng-container>
+    </div>
   </header>
 </section>
