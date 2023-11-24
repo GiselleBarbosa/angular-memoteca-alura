@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { pensamento } from 'src/app/shared/pensamento';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  selector: 'app-notes-create',
+  templateUrl: './notes-create.component.html',
+  styleUrls: ['./notes-create.component.css'],
 })
-export class FormComponent implements OnInit {
+export class NotesCreateComponent implements OnInit {
   public pensamento = pensamento;
 
   constructor() {}
@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
     alert('Criado pensamento');
   }
 
-  cancelar(){
-    alert('Cancelou')
+  cancelar() {
+    alert('Cancelou');
   }
 }
