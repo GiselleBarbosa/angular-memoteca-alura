@@ -9,8 +9,16 @@ import { pensamento } from 'src/app/shared/pensamento';
 })
 export class FormComponent implements OnInit {
   public pensamento = pensamento;
-  
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  criarPensamento() {
+    alert('Criado pensamento');
+  }
+
+  cancelar(){
+    alert('Cancelou')
+  }
 }
