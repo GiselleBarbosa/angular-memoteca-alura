@@ -7,9 +7,17 @@ import { NotesModel } from '../../../core/model/notes-model';
   styleUrls: ['./cards.component.css'],
 })
 export class CardsComponent implements OnInit {
-  @Input() note!: NotesModel;
+  @Input() public note!: NotesModel;
 
-  constructor() {}
+  public ngOnInit(): void {
+   
+  }
 
-  ngOnInit(): void {}
+  public widthCardNotes(): string {
+    if (this.note.conteudo.length >= 100) {
+      return 'pensamento-g';
+    
+    }
+    return 'pensamento-p';
+}
 }

@@ -1,4 +1,7 @@
-<div class="pensamento {{ note.modelo }} ff-roboto-mono pensamento-p">
+<div
+  class="pensamento {{ note.modelo }} ff-roboto-mono"
+  [ngClass]="widthCardNotes()"
+>
   <img src="/assets/imagens/{{ note.modelo }}.png" alt="Aspas coloridas" />
   <p class="conteudo">{{ note.conteudo }}</p>
   <p class="autoria">
@@ -13,3 +16,5 @@
     </button>
   </div>
 </div>
+
+
