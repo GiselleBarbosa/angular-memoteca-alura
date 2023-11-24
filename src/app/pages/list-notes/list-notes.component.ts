@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { notesMock } from 'src/app/shared/mocks/notes.mock';
+import { notesMock } from 'src/app/core/mocks/notes.mock';
 
 @Component({
   selector: 'app-list-notes',
@@ -8,8 +7,8 @@ import { notesMock } from 'src/app/shared/mocks/notes.mock';
   styleUrls: ['./list-notes.component.css'],
 })
 export class ListNotesComponent implements OnInit {
-  public listNotes = notesMock;
-  
+  public notesList = notesMock;
+
   constructor() {}
 
   ngOnInit(): void {}

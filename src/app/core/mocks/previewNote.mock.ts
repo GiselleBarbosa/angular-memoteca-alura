@@ -1,7 +1,7 @@
 //MOCK
-export const noteMock = {
+export const PreviewNoteMock = {
   id: '1',
-  conteudo: 'Revisão Angular',
+  conteudo: 'Curso Angular',
   autoria: 'Giselle Barbosa',
   modelo: 'modelo3',
 };

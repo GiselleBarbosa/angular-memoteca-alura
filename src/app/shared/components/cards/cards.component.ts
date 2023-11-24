@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-import { noteMock } from '../../mocks/note.mock';
+import { Component, Input, OnInit } from '@angular/core';
+import { NotesModel } from '../../../core/model/notes-model';
 
 @Component({
   selector: 'app-cards',
@@ -8,7 +7,7 @@ import { noteMock } from '../../mocks/note.mock';
   styleUrls: ['./cards.component.css'],
 })
 export class CardsComponent implements OnInit {
-  public pensamento = noteMock;
+  @Input() note!: NotesModel;
 
   constructor() {}
 
