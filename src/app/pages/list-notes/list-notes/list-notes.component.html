@@ -4,11 +4,13 @@
     <button class="botao" routerLink="/create-notes">
       Adicionar pensamento
     </button>
-    <div class="mural" *ngIf="notesList.length > 0; else emptyNotes">
-      <ng-container *ngFor="let note of notesList">
-        <app-cards [note]="note"></app-cards>
-      </ng-container>
-    </div>
+    <ng-container *ngIf="notes$ | async as notes">
+      <div class="mural" *ngIf="notes.length > 0; else emptyNotes">
+        <ng-container *ngFor="let note of notes">
+          <app-cards [note]="note"></app-cards>
+        </ng-container>
+      </div>
+    </ng-container>
 
     <ng-template #emptyNotes>
       <div class="ff-inter sem-pensamentos">

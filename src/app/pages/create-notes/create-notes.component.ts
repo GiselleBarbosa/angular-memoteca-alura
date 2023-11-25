@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NotesModel } from 'src/app/core/model/notes-model';
+import { NotesService } from 'src/app/core/services/notes.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-create-notes',
@@ -8,11 +9,13 @@ import { NotesModel } from 'src/app/core/model/notes-model';
   styleUrls: ['./create-notes.component.css'],
 })
 export class CreateNotesComponent implements OnInit {
-  public note!: NotesModel;
+  public previewNotes$ = this.notesService.previewNotes$;
 
-  constructor() {}
+  constructor(private notesService: NotesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.notesService.getPreviewNotes().subscribe();
+  }
 
   criarPensamento() {
     alert('Criado pensamento');
