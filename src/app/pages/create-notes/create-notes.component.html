@@ -7,22 +7,22 @@
   </header>
 
   <ng-container *ngIf="previewNotes$ | async as notes">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="createNote()">
       <label for="pensamento">Pensamento</label>
       <input
         type="textarea"
         class="input"
         id="pensamento"
-        name="pensamento"
         placeholder="Digite o pensamento"
+        formControlName="conteudo"
       />
       <label for="autoria">Autoria ou Fonte</label>
       <input
         type="textarea"
         class="input"
         id="autoria"
-        name="autoria"
         placeholder="Digite a autoria ou fonte"
+        formControlName="autoria"
       />
 
       <label for="modelo">Selecione o modelo do card:</label>
@@ -34,8 +34,7 @@
                 type="radio"
                 id="{{ note.modelo }}"
                 value="{{ note.modelo }}"
-                name="modelo-card"
-                [(ngModel)]="note.modelo"
+                formControlName="modelo"
               />
               <div class="custom-radio">
                 <span></span>
@@ -58,7 +57,7 @@
       </div>
       <div class="acoes">
         <button class="botao" routerLink="/">Cancelar</button>
-        <button class="botao" (click)="criarPensamento()">Salvar</button>
+        <button class="botao" type="submit">Salvar</button>
       </div>
     </form>
   </ng-container>

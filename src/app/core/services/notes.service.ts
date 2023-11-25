@@ -36,4 +36,8 @@ export class NotesService {
       })
     );
   }
+
+  public createNote(note: NotesModel): Observable<NotesModel> {
+    return this.http.post<NotesModel>(`${this.notesApi}/notes`, note);
+  }
 }

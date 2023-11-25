@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription, first } from 'rxjs';
 
 import { NotesService } from 'src/app/core/services/notes.service';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-notes',
@@ -11,13 +13,32 @@ import { Subscription } from 'rxjs';
 export class CreateNotesComponent implements OnInit {
   public previewNotes$ = this.notesService.previewNotes$;
 
-  constructor(private notesService: NotesService) {}
+  public form!: FormGroup;
+
+  constructor(
+    private notesService: NotesService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.notesService.getPreviewNotes().subscribe();
+
+    this.form = this.fb.group({
+      conteudo: ['', Validators.required],
+      autoria: ['', Validators.required],
+      modelo: ['', Validators.required],
+    });
   }
 
-  criarPensamento() {
-    alert('Criado pensamento');
+  createNote() {
+    const formData = this.form.getRawValue();
+    if (this.form.valid) {
+      this.notesService.createNote(formData).pipe(first()).subscribe();
+      alert('Criado com sucesso!')
+      this.router.navigate(['/list-notes']);
+    } else {
+      alert('Dados invalidos');
+    }
   }
 }

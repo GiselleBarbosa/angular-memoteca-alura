@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import { NotesModel } from '../../../core/model/notes-model';
 
 @Component({
@@ -6,18 +7,13 @@ import { NotesModel } from '../../../core/model/notes-model';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css'],
 })
-export class CardsComponent implements OnInit {
+export class CardsComponent {
   @Input() public note!: NotesModel;
-
-  public ngOnInit(): void {
-   
-  }
 
   public widthCardNotes(): string {
     if (this.note.conteudo.length >= 100) {
       return 'pensamento-g';
-    
     }
     return 'pensamento-p';
-}
+  }
 }
