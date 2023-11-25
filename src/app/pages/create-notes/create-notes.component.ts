@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PreviewNoteMock } from 'src/app/core/mocks/previewNote.mock';
+
+import { NotesModel } from 'src/app/core/model/notes-model';
 
 @Component({
   selector: 'app-create-notes',
@@ -7,7 +8,7 @@ import { PreviewNoteMock } from 'src/app/core/mocks/previewNote.mock';
   styleUrls: ['./create-notes.component.css'],
 })
 export class CreateNotesComponent implements OnInit {
-  public note = PreviewNoteMock;
+  public note!: NotesModel;
 
   constructor() {}
 

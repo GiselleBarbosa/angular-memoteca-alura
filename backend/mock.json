@@ -1,32 +1,55 @@
 {
   "notes": [
     {
-      "id": "1",
-      "conteudo": "Iniciando curso Alura (Angular)",
+      "id": 1,
+      "conteudo": "Dados vindo do mock (API)",
       "autoria": "Giselle Barbosa",
       "modelo": "modelo1"
     },
     {
-      "id": "2",
+      "id": 2,
       "conteudo": "Mockando dados com JSON-SERVER",
       "autoria": "Giselle Barbosa",
       "modelo": "modelo2"
     },
     {
-      "id": "3",
+      "id": 3,
       "conteudo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero impedit eum, quas veniam consequatur fuga amet eaque qui, autem odio. Voluptatibus assumenda ad quasi ullam provident delectus repellat unde.",
       "autoria": "Giselle Barbosa",
       "modelo": "modelo3"
     },
     {
-      "id": "2",
+      "id": 4,
       "conteudo": "Lorem ipsum dolor sit, ",
       "autoria": "Giselle Barbosa",
       "modelo": "modelo2"
     },
     {
-      "id": "3",
+      "id": 5,
       "conteudo": "Adicionado Model",
+      "autoria": "Giselle Barbosa",
+      "modelo": "modelo3"
+    }
+  ],
+
+  "previewNotes": [
+    {
+      "id": 1,
+      "conteudo": "Previa de uma Anotacao",
+      "autoria": "Nome do autor",
+      "modelo": "modelo1"
+    },
+
+    {
+      "id": 2,
+      "conteudo": "Previa da Anotacao",
+      "autoria": "Giselle Barbosa",
+      "modelo": "modelo2"
+    },
+
+    {
+      "id": 3,
+      "conteudo": "Previa da Anotacao",
       "autoria": "Giselle Barbosa",
       "modelo": "modelo3"
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { notesMock } from 'src/app/core/mocks/notes.mock';
+
+import { NotesModel } from 'src/app/core/model/notes-model';
 
 @Component({
   selector: 'app-list-notes',
@@ -7,7 +8,7 @@ import { notesMock } from 'src/app/core/mocks/notes.mock';
   styleUrls: ['./list-notes.component.css'],
 })
 export class ListNotesComponent implements OnInit {
-  public notesList = notesMock;
+  public notesList: NotesModel[] = [];
 
   constructor() {}
 

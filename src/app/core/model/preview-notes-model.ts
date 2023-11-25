@@ -1,11 +1,9 @@
-export class NotesModel {
-  id: number;
+export class PreviewNotesModel {
   conteudo: string;
   autoria: string;
   modelo: string;
 
-  constructor(id: number, conteudo: string, autoria: string, modelo: string) {
-    this.id = id;
+  constructor(conteudo: string, autoria: string, modelo: string) {
     this.conteudo = conteudo;
     this.autoria = autoria;
     this.modelo = modelo;
