@@ -79,6 +79,7 @@ export class CreateNotesComponent implements OnInit {
     } else {
       this.createNote();
       this.router.navigate(['/list-notes']);
+      this.notesService.getNotes()
     }
   }
 }
