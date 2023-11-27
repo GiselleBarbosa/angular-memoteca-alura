@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { NotesModel } from '../../../core/model/notes-model';
+import { NotesModel } from '@models/notes-model';
 
 @Component({
   selector: 'app-cards',

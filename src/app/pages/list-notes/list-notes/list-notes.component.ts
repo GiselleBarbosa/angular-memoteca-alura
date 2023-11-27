@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NotesService } from './../../../core/services/notes.service';
+import { NotesService } from '@services/notes.service';
 import { take } from 'rxjs';
 
 @Component({
@@ -17,9 +17,9 @@ export class ListNotesComponent implements OnInit {
     this.notesService.getNotes();
   }
 
-  public deleteNote(noteId: number): void {
+  public deleteNote(id: number): void {
     this.notesService
-      .deleteNote(noteId)
+      .deleteNote(id)
       .pipe(take(1))
       .subscribe(() => this.notesService.getNotes());
   }
