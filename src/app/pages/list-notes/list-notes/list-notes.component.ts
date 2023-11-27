@@ -1,25 +1,26 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NotesService } from './../../../core/services/notes.service';
-import { Subscription } from 'rxjs';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-list-notes',
   templateUrl: './list-notes.component.html',
   styleUrls: ['./list-notes.component.css'],
 })
-export class ListNotesComponent implements OnInit, OnDestroy {
-  private unsub!: Subscription;
-
+export class ListNotesComponent implements OnInit {
   public notes$ = this.notesService.notes$;
 
   constructor(private notesService: NotesService) {}
 
   ngOnInit(): void {
-    this.unsub = this.notesService.getNotes().subscribe();
+    this.notesService.getNotes();
   }
 
-  ngOnDestroy(): void {
-    this.unsub.unsubscribe();
+  public deleteNote(noteId: number): void {
+    this.notesService
+      .deleteNote(noteId)
+      .pipe(take(1))
+      .subscribe(() => this.notesService.getNotes());
   }
 }

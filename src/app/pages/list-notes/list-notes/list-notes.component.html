@@ -7,7 +7,10 @@
     <ng-container *ngIf="notes$ | async as notes">
       <div class="mural" *ngIf="notes.length > 0; else emptyNotes">
         <ng-container *ngFor="let note of notes">
-          <app-cards [note]="note"></app-cards>
+          <app-cards
+            [note]="note"
+            (deleteClicked)="deleteNote(note.id)"
+          ></app-cards>
         </ng-container>
       </div>
     </ng-container>

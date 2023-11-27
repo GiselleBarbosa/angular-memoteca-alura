@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { NotesModel } from '../../../core/model/notes-model';
 
@@ -10,10 +10,16 @@ import { NotesModel } from '../../../core/model/notes-model';
 export class CardsComponent {
   @Input() public note!: NotesModel;
 
+  @Output() public deleteClicked = new EventEmitter();
+
   public widthCardNotes(): string {
     if (this.note.conteudo.length >= 100) {
       return 'pensamento-g';
     }
     return 'pensamento-p';
+  }
+
+  public deleteEvent(): void {
+    this.deleteClicked.emit();
   }
 }

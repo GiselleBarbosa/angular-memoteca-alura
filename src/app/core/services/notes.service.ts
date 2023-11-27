@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable, Subject, first, tap } from 'rxjs';
+import { Observable, Subject, take, tap } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -29,15 +29,20 @@ export class NotesService {
       );
   }
 
-  public getNotes(): Observable<NotesModel[]> {
-    return this.http.get<NotesModel[]>(`${this.notesApi}/notes`).pipe(
-      tap((notes) => {
+  public getNotes(): void {
+    this.http
+      .get<NotesModel[]>(`${this.notesApi}/notes`)
+      .pipe(take(1))
+      .subscribe((notes) => {
         this.notesObservable.next(notes);
-      })
-    );
+      });
   }
 
   public createNote(note: NotesModel): Observable<NotesModel> {
     return this.http.post<NotesModel>(`${this.notesApi}/notes`, note);
+  }
+
+  public deleteNote(id: number): Observable<NotesModel> {
+    return this.http.delete<NotesModel>(`${this.notesApi}/notes/${id}`);
   }
 }
