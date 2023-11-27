@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription, first } from 'rxjs';
 
 import { NotesService } from 'src/app/core/services/notes.service';
 import { Router } from '@angular/router';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-create-notes',
@@ -22,7 +22,7 @@ export class CreateNotesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.notesService.getPreviewNotes().subscribe();
+    this.notesService.getPreviewNotes();
 
     this.form = this.fb.group({
       conteudo: ['', Validators.required],
@@ -35,7 +35,7 @@ export class CreateNotesComponent implements OnInit {
     const formData = this.form.getRawValue();
     if (this.form.valid) {
       this.notesService.createNote(formData).pipe(first()).subscribe();
-      alert('Criado com sucesso!')
+      alert('Criado com sucesso!');
       this.router.navigate(['/list-notes']);
     } else {
       alert('Dados invalidos');

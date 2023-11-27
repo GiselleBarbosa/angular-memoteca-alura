@@ -19,14 +19,13 @@ export class NotesService {
 
   constructor(private http: HttpClient) {}
 
-  public getPreviewNotes(): Observable<PreviewNotesModel[]> {
-    return this.http
+  public getPreviewNotes(): void {
+    this.http
       .get<PreviewNotesModel[]>(`${this.notesApi}/previewNotes`)
-      .pipe(
-        tap((previewNotes) => {
-          this.previewNotesObservable.next(previewNotes);
-        })
-      );
+      .pipe(take(1))
+      .subscribe((previewNotes) => {
+        this.previewNotesObservable.next(previewNotes);
+      });
   }
 
   public getNotes(): void {
