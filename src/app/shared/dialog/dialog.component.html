@@ -1,0 +1,18 @@
+<section class="container excluir-pensamentos ff-inter" *ngIf="showDialog">
+  <div class="modal">
+    <p>
+      {{ message }} <br />
+      {{ confirmationMessage }}
+    </p>
+    <div class="acoes">
+      <button class="botao botao-cancelar" (click)="cancelEvent()">
+        {{ btnCancel }}
+      </button>
+
+      <button class="botao botao-excluir" (click)="confirmEvent()">
+        {{ btnConfirm }}
+      </button>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</section>

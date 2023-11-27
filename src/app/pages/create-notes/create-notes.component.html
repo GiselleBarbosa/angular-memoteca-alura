@@ -65,3 +65,13 @@
     </form>
   </ng-container>
 </section>
+
+<app-dialog
+  [showDialog]="showDialog"
+  [message]="dialogMessage"
+  [confirmationMessage]="confirmationMessage"
+  [btnCancel]="btnCancel"
+  [btnConfirm]="btnConfirm"
+  (btnConfirmClicked)="setDialog(false)"
+  (btnCancelClicked)="navigateToHome()"
+></app-dialog>

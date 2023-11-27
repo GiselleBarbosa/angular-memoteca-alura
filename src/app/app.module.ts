@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CardsComponent } from '@cards-list-notes/cards.component';
 import { CreateNotesComponent } from '@create-notes/create-notes.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +20,7 @@ import { NgModule } from '@angular/core';
     ListNotesComponent,
     CreateNotesComponent,
     CardsComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,

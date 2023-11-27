@@ -11,6 +11,7 @@ import { take } from 'rxjs';
 })
 export class ListNotesComponent implements OnInit {
   public notes$ = this.notesService.notes$;
+  public showDialog = false;
 
   constructor(private notesService: NotesService, private router: Router) {}
 
@@ -18,14 +19,21 @@ export class ListNotesComponent implements OnInit {
     this.notesService.getNotes();
   }
 
+  public redirectToEditNote(id: number) {
+    this.router.navigate([`edit-notes/${id}`]);
+  }
+
   public deleteNote(id: number): void {
     this.notesService
       .deleteNote(id)
       .pipe(take(1))
-      .subscribe(() => this.notesService.getNotes());
+      .subscribe(() => {
+        this.notesService.getNotes();
+        this.setDialog(false);
+      });
   }
 
-  public redirectToEditNote(id: number) {
-    this.router.navigate([`edit-notes/${id}`]);
+  public setDialog(dialogStatus: boolean): void {
+    this.showDialog = dialogStatus;
   }
 }

@@ -20,6 +20,14 @@ export class CreateNotesComponent implements OnInit {
 
   public id!: string | null;
 
+  public showDialog = false;
+
+  public dialogMessage!: string;
+  public confirmationMessage!: string;
+
+  public btnCancel!: string;
+  public btnConfirm!: string;
+
   constructor(
     private notesService: NotesService,
     private fb: FormBuilder,
@@ -58,7 +66,12 @@ export class CreateNotesComponent implements OnInit {
     const formData = this.form.getRawValue();
     if (this.form.valid) {
       this.notesService.createNote(formData).pipe(first()).subscribe();
-      this.router.navigate(['/list-notes']);
+      this.dialogMessage = 'Anotação criada com sucesso!';
+      this.confirmationMessage = 'O que deseja fazer?';
+      this.btnCancel = 'Voltar ao inicio';
+      this.btnConfirm = 'Cadastrar nova';
+      this.setDialog(true);
+      this.form.reset();
     } else {
       alert('Dados invalidos');
     }
@@ -70,16 +83,27 @@ export class CreateNotesComponent implements OnInit {
       .editNote(Number(this.id), dataForm)
       .pipe(take(1))
       .subscribe();
+    this.dialogMessage = 'Anotação atualizada com sucesso!';
+    this.confirmationMessage = 'O que deseja fazer?';
+    this.btnCancel = 'Voltar ao inicio';
+    this.btnConfirm = 'Conferir a anotação';
+    this.setDialog(true);
   }
 
   public saveModifications() {
     if (this.id) {
       this.editNote(Number(this.id));
-      alert('Atualização realizada com sucesso!')
     } else {
       this.createNote();
-      this.router.navigate(['/list-notes']);
-      this.notesService.getNotes()
+      this.notesService.getNotes();
     }
+  }
+
+  public setDialog(dialogStatus: boolean): void {
+    this.showDialog = dialogStatus;
+  }
+
+  public navigateToHome(): void {
+    this.router.navigate(['/list-notes']);
   }
 }
