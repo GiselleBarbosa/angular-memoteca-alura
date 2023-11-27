@@ -1,36 +1,5 @@
 {
-  "notes": [
-    {
-      "id": 1,
-      "conteudo": "Dados vindo do mock (API)",
-      "autoria": "Giselle Barbosa",
-      "modelo": "modelo1"
-    },
-    {
-      "id": 2,
-      "conteudo": "Mockando dados com JSON-SERVER",
-      "autoria": "Giselle Barbosa",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 3,
-      "conteudo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At vero impedit eum, quas veniam consequatur fuga amet eaque qui, autem odio. Voluptatibus assumenda ad quasi ullam provident delectus repellat unde.",
-      "autoria": "Giselle Barbosa",
-      "modelo": "modelo3"
-    },
-    {
-      "conteudo": "teste criacao 1",
-      "autoria": "Unknow1",
-      "modelo": "modelo1",
-      "id": 4
-    },
-    {
-      "conteudo": "teste criacao 2",
-      "autoria": "Unknow2",
-      "modelo": "modelo2",
-      "id": 5
-    }
-  ],
+  "notes": [],
   "previewNotes": [
     {
       "id": 1,

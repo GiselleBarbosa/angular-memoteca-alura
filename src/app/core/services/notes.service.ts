@@ -46,6 +46,10 @@ export class NotesService {
   }
 
   public editNote(id: number, note: NotesModel): Observable<NotesModel> {
-    return this.http.patch<NotesModel>(`${this.notesApi}/notes/${id}`, note);
+    return this.http.put<NotesModel>(`${this.notesApi}/notes/${id}`, note);
+  }
+
+  public getNoteById(id: number): Observable<NotesModel> {
+    return this.http.get<NotesModel>(`${this.notesApi}/notes/${id}`);
   }
 }

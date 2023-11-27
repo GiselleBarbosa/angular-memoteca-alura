@@ -1,13 +1,16 @@
 <section class="container criar-pensamentos ff-inter">
   <header class="header">
-    <h2>
-      Adicione um <br />
-      pensamento novo:
-    </h2>
+    <ng-container *ngIf="!this.id">
+      <h2>Crie uma nova anotação:</h2>
+    </ng-container>
+
+    <ng-container *ngIf="this.id">
+      <h2>Edite uma anotação existente:</h2>
+    </ng-container>
   </header>
 
   <ng-container *ngIf="previewNotes$ | async as notes">
-    <form [formGroup]="form" (ngSubmit)="createNote()">
+    <form [formGroup]="form" (ngSubmit)="saveModifications()">
       <label for="pensamento">Pensamento</label>
       <input
         type="textarea"
@@ -56,7 +59,7 @@
         </ng-container>
       </div>
       <div class="acoes">
-        <button class="botao" routerLink="/">Cancelar</button>
+        <button class="botao" routerLink="/">Voltar</button>
         <button class="botao" type="submit">Salvar</button>
       </div>
     </form>
