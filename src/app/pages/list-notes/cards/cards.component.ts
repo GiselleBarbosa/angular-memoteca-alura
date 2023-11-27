@@ -10,7 +10,8 @@ import { NotesModel } from '@models/notes-model';
 export class CardsComponent {
   @Input() public note!: NotesModel;
 
-  @Output() public deleteClicked = new EventEmitter();
+  @Output() public deleteBtnClicked = new EventEmitter();
+  @Output() public editBtnClicked = new EventEmitter();
 
   public widthCardNotes(): string {
     if (this.note.conteudo.length >= 100) {
@@ -20,6 +21,10 @@ export class CardsComponent {
   }
 
   public deleteEvent(): void {
-    this.deleteClicked.emit();
+    this.deleteBtnClicked.emit();
+  }
+
+  public editEvent(): void {
+    this.editBtnClicked.emit();
   }
 }

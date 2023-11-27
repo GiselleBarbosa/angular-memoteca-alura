@@ -9,7 +9,8 @@
         <ng-container *ngFor="let note of notes">
           <app-cards
             [note]="note"
-            (deleteClicked)="deleteNote(note.id)"
+            (deleteBtnClicked)="deleteNote(note.id)"
+            (editBtnClicked)="redirectToEditNote(note.id)"
           ></app-cards>
         </ng-container>
       </div>

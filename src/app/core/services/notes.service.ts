@@ -44,4 +44,8 @@ export class NotesService {
   public deleteNote(id: number): Observable<NotesModel> {
     return this.http.delete<NotesModel>(`${this.notesApi}/notes/${id}`);
   }
+
+  public editNote(id: number, note: NotesModel): Observable<NotesModel> {
+    return this.http.patch<NotesModel>(`${this.notesApi}/notes/${id}`, note);
+  }
 }

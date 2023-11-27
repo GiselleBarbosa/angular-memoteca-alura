@@ -8,7 +8,7 @@
     <b>{{ note.autoria }}</b>
   </p>
   <div class="acoes">
-    <button class="botao-editar">
+    <button class="botao-editar" (click)="editEvent()">
       <img src="/assets/imagens/icone-editar.png" alt="Ícone de editar" />
     </button>
     <button class="botao-excluir" (click)="deleteEvent()">

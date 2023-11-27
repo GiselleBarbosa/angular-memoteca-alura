@@ -41,4 +41,8 @@ export class CreateNotesComponent implements OnInit {
       alert('Dados invalidos');
     }
   }
+
+  public editNote(id: number): void {
+    alert('clicou em editar');
+  }
 }

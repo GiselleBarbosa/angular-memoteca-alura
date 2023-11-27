@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NotesService } from '@services/notes.service';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 
 @Component({
@@ -11,7 +12,7 @@ import { take } from 'rxjs';
 export class ListNotesComponent implements OnInit {
   public notes$ = this.notesService.notes$;
 
-  constructor(private notesService: NotesService) {}
+  constructor(private notesService: NotesService, private router: Router) {}
 
   ngOnInit(): void {
     this.notesService.getNotes();
@@ -22,5 +23,9 @@ export class ListNotesComponent implements OnInit {
       .deleteNote(id)
       .pipe(take(1))
       .subscribe(() => this.notesService.getNotes());
+  }
+
+  public redirectToEditNote(id: number) {
+    this.router.navigate([`edit-notes/${id}`]);
   }
 }
