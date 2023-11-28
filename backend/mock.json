@@ -1,0 +1,48 @@
+{
+  "notes": [
+    {
+      "conteudo": "Teste criação de anotação",
+      "autoria": "Giselle",
+      "modelo": "modelo1",
+      "id": 1
+    },
+    {
+      "conteudo": "Teste criação de anotação 2",
+      "autoria": "Giselle2",
+      "modelo": "modelo2",
+      "id": 2
+    },
+    {
+      "conteudo": "Teste atualização de anotação 3",
+      "autoria": "Giselle3",
+      "modelo": "modelo3",
+      "id": 3
+    }
+  ],
+  "previewNotes": [
+    {
+      "id": 1,
+      "titulo": "Modelo 1",
+      "conteudo": "Previa da Anotacao",
+      "autoria": "Nome do autor",
+      "modelo": "modelo1",
+      "cor_aspas": "azuis"
+    },
+    {
+      "id": 2,
+      "titulo": "Modelo 2",
+      "conteudo": "Previa da Anotacao",
+      "autoria": "Giselle Barbosa",
+      "modelo": "modelo2",
+      "cor_aspas": "azul-claro"
+    },
+    {
+      "id": 3,
+      "titulo": "Modelo 3",
+      "conteudo": "Previa da Anotacao",
+      "autoria": "Giselle Barbosa",
+      "modelo": "modelo3",
+      "cor_aspas": "verdes"
+    }
+  ]
+}

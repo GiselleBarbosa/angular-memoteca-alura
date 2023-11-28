@@ -20,6 +20,11 @@ const routes: Routes = [
     path: 'create-notes',
     component: CreateNotesComponent,
   },
+
+  {
+    path: 'edit-notes/:id',
+    component: CreateNotesComponent,
+  },
 ];
 
 @NgModule({

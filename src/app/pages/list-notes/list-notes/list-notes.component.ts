@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { notesMock } from 'src/app/core/mocks/notes.mock';
+
+import { NotesService } from '@services/notes.service';
+import { Router } from '@angular/router';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-list-notes',
@@ -7,9 +10,30 @@ import { notesMock } from 'src/app/core/mocks/notes.mock';
   styleUrls: ['./list-notes.component.css'],
 })
 export class ListNotesComponent implements OnInit {
-  public notesList = notesMock;
+  public notes$ = this.notesService.notes$;
+  public showDialog = false;
 
-  constructor() {}
+  constructor(private notesService: NotesService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.notesService.getNotes();
+  }
+
+  public redirectToEditNote(id: number) {
+    this.router.navigate([`edit-notes/${id}`]);
+  }
+
+  public deleteNote(id: number): void {
+    this.notesService
+      .deleteNote(id)
+      .pipe(take(1))
+      .subscribe(() => {
+        this.notesService.getNotes();
+        this.setDialog(false);
+      });
+  }
+
+  public setDialog(dialogStatus: boolean): void {
+    this.showDialog = dialogStatus;
+  }
 }

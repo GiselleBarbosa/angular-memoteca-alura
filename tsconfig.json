@@ -4,6 +4,23 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@services/*": [
+        "./src/app/core/services/*"
+      ],
+      "@models/*": [
+        "./src/app/core/model/*"
+      ],
+      "@list-notes/*": [
+        "./src/app/pages/list-notes/list-notes/*"
+      ],
+      "@create-notes/*": [
+        "./src/app/pages/create-notes/*"
+      ],
+      "@cards-list-notes/*": [
+        "./src/app/pages/list-notes/cards/*"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
