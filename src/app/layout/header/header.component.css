@@ -7,13 +7,13 @@
 }
 
 .cabecalho .logo {
-  width: 46%;
+  width: 40%;
   padding: 2rem 3rem;
 }
 
 .cabecalho .logo img {
-  width: 90%;
-  max-width: 350px;
+  width: 80%;
+  max-width: 300px;
   margin-bottom: 2rem;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .cabecalho p {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: #6BD1FF;
 }
 

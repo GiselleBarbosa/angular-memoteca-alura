@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { pensamento } from 'src/app/shared/pensamento';
+import { PreviewNoteMock } from 'src/app/core/mocks/previewNote.mock';
 
 @Component({
   selector: 'app-create-notes',
@@ -8,7 +7,7 @@ import { pensamento } from 'src/app/shared/pensamento';
   styleUrls: ['./create-notes.component.css'],
 })
 export class CreateNotesComponent implements OnInit {
-  public pensamento = pensamento;
+  public note = PreviewNoteMock;
 
   constructor() {}
 
@@ -17,5 +16,4 @@ export class CreateNotesComponent implements OnInit {
   criarPensamento() {
     alert('Criado pensamento');
   }
-
 }
